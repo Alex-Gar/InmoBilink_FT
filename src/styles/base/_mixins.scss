@@ -1,0 +1,105 @@
+@use "variables" as v;
+
+@mixin telefono {
+  @media (min-width: v.$telefono) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+@mixin autoPantalla($pixeles) {
+  @media (min-width:#{$pixeles}) {
+    @content;
+  }
+}
+
+@mixin boton($bgColor, $display, $borderRadius) {
+  background-color: $bgColor;
+  color: v.$oscuroSecundario;
+  font-weight: v.$bold;
+  padding: 1rem 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  display: $display;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: $borderRadius;
+
+  &:hover {
+    background-color: darken($bgColor, 7);
+  }
+}
+
+@mixin grid($columnas, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $gap;
+}
+
+@mixin circulo_R($width, $height, $fontSize) {
+  width: $width;
+  height: $height;
+  border: v.$primario 1px solid;
+  border-radius: 10rem;
+  background-color: v.$negro;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: $fontSize;
+  }
+}
+
+@mixin btn($bgColor, $color, $display, $borderRadius) {
+  background-color: $bgColor;
+  color: $color;
+  font-weight: v.$black;
+  padding: 1rem 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  display: $display;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: $borderRadius;
+
+  &:hover {
+    background-color: darken($bgColor, 10);
+  }
+}
+@mixin imgFondo($rutaImg) {
+  background-image: url($rutaImg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 45vh;
+  @include telefono {
+    height: 70vh;
+  }
+  display: flex;
+
+  h1 {
+    padding: 2rem 0;
+    color: v.$blanco;
+    border: v.$primario 1.5rem solid;
+    max-width: 70%;
+    margin: 10% auto;
+    text-align: center;
+    font-weight: v.$black;
+    background-color: rgba(8, 8, 8, 0.5);
+  }
+}

@@ -1,0 +1,155 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mx;
+
+.tarjetasPropiedades {
+    h2 {
+        color: v.$primario;
+        margin: 2rem 0 0 0;
+        text-align: left;
+        font-size: 2.4rem;
+        font-weight: 300;
+    }
+
+    h3 {
+        color: v.$blanco;
+    }
+
+    a {
+        color: v.$blanco;
+
+        i {
+            color: v.$primario;
+            font-size: 1.1rem;
+        }
+    }
+
+    .verMas {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        a:hover {
+            color: v.$primario;
+        }
+
+        .lienaPequena {
+            width: 7rem;
+            border: solid .2rem v.$primario;
+        }
+    }
+
+    hr {
+        border: solid .1rem v.$primario;
+        margin: 0;
+    }
+
+    .propiedades {
+        @include mx.grid(1, 1rem);
+
+        @include mx.autoPantalla(450px) {
+            @include mx.grid(2, 1rem);
+        }
+
+        @include mx.autoPantalla(700px) {
+            @include mx.grid(3, 1rem);
+        }
+
+        @include mx.desktop {
+            @include mx.grid(4, 1rem);
+        }
+
+        margin: 2rem 0;
+
+        .propiedad {
+            border: solid .1rem v.$gris;
+
+            .propiedad_img {
+                picture {
+                    display: flex;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .propiedad_informacion {
+                .contenedor {
+                    max-width: 85%;
+                }
+
+                .cabecera_info {
+                    display: flex;
+                    color: v.$primario;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .titulo_barra {
+                        display: flex;
+                        align-items: center;
+
+                        h3 {
+                            color: v.$blanco;
+                            margin: 0;
+                            font-size: 2.3rem;
+                        }
+
+                        hr {
+                            transform: rotate(90deg);
+                            width: 2rem;
+                        }
+                    }
+
+                    p {
+                        color: v.$gris;
+                        font-size: 1.6rem;
+                        margin: 0;
+
+                    }
+                }
+
+                .info_ubic {
+                    margin: 0 1.5rem 0 4rem;
+
+                    .ubicacion {
+
+                        h4 {
+                            color: v.$primario;
+                            margin: 1rem 0 0 0;
+                        }
+
+                        p {
+                            margin: 0;
+                            color: v.$gris;
+                            margin: 0 0 1rem 0;
+                        }
+                    }
+                }
+                .precio{
+                    color: v.$primario;
+                }
+
+                .cuerpo_info {
+                    @include mx.grid(2, 1rem);
+                    margin-top: 1rem;
+
+                    p {
+                        color: v.$gris;
+                        font-size: 1.3rem;
+                        margin: 0;
+
+                        &:last-child {
+                            margin-bottom: 1rem;
+                        }
+
+                        span {
+                            color: v.$primario;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

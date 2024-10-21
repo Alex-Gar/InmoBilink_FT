@@ -1,0 +1,359 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mx;
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+
+  @include mx.tablet {
+    flex-direction: row;
+  }
+
+  .slider {
+    width: 100%;
+    margin: 0 0 -6rem 0;
+    overflow: hidden;
+
+    @include mx.tablet {
+      margin: 5rem 0;
+      flex: 2;
+    }
+
+    ul {
+      display: flex;
+      width: 500%;
+      padding: 0;
+      animation: slide 20s infinite alternate ease-in-out;
+
+      li {
+        width: 100%;
+        list-style: none;
+        display: flex;
+
+        .conten_img {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .texto {
+            position: absolute;
+            top: 25rem;
+            width: 100%;
+            padding: 0 25rem;
+            text-align: center;
+            color: v.$blanco;
+
+            h2 {
+              font-size: 4.5rem;
+              margin-bottom: 3.5rem;
+            }
+          }
+
+          picture,
+          img {
+            width: 100%;
+            height: 45vh;
+            object-fit: cover;
+            @include mx.telefono{
+              height: 65vh;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+
+  20% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+
+  100% {
+    margin-left: -300%;
+  }
+}
+
+
+.conten_info {
+  flex: 1;
+  z-index: 2;
+
+  background-color: v.$primario;
+  color: v.$blanco;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    width: 500%;
+    padding: 0;
+    animation: slide 20s infinite alternate ease-in-out;
+
+    li {
+      width: 100%;
+      list-style: none;
+      position: relative;
+      padding: 0 4rem;
+      color: v.$negro;
+      margin: 2rem 0;
+
+      @include mx.tablet {
+        margin: 5rem 0;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        text-align: left;
+      }
+
+      .txt,
+      p {
+        font-size: 1.8rem;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+
+    .conten_txt {
+      .contenId {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          flex: 2;
+        }
+      }
+
+      .tipoPropi {
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      .finali {
+        margin: 0;
+        font-size: 2.8rem;
+        font-weight: v.$bold;
+        text-align: left;
+        
+        @include mx.telefono() {
+          margin: 2rem 0;
+          font-size: 3.8rem;
+        }
+      }
+
+      .txt_right {
+        text-align: right;
+        font-weight: v.$bold;
+        font-size: 2rem;
+      }
+
+      h3,
+      .txt_right {
+        margin: 1.5rem 0;
+      }
+    }
+  }
+}
+
+/* Slider propiedad */
+.section-heading {
+  font-size: 3rem;
+  margin: 2.5rem;
+  font-weight: v.$delgada;
+  text-align: center;
+  color: v.$primario;
+}
+
+.tranding-slider {
+  height: 52rem;
+  padding: 2rem 0;
+  position: relative;
+
+  @media (max-width: 500px) {
+    height: 45rem;
+  }
+
+  .tranding-slide {
+    width: 37rem;
+    height: 42rem;
+    position: relative;
+
+    @media (max-width: 500px) {
+      width: 28rem !important;
+      height: 36rem !important;
+
+      .tranding-slide-img img {
+        width: 28rem !important;
+        height: 36rem !important;
+      }
+    }
+
+    .tranding-slide-img img {
+      width: 100%;
+      border-radius: 2rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .swiper-button-next {
+    left: 58%;
+    transform: translateX(-58%);
+
+    @media (max-width: 990px) {
+      left: 70%;
+      transform: translateX(-70%);
+    }
+
+    @media (max-width: 450px) {
+      left: 80%;
+      transform: translateX(-80%);
+    }
+  }
+
+  .swiper-button-prev {
+    left: 42%;
+    transform: translateX(-42%);
+
+    @media (max-width: 990px) {
+      left: 30%;
+      transform: translateX(-30%);
+    }
+
+    @media (max-width: 450px) {
+      left: 20%;
+      transform: translateX(-20%);
+    }
+  }
+
+  .slider-arrow {
+    background: v.$blanco;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    filter: drop-shadow(0px 8px 24px rgba(195, 192, 15, 0.5));
+
+    ion-icon {
+      font-size: 2rem;
+      color: v.$negro;
+    }
+
+    &::after {
+      content: '';
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+    width: 15rem;
+    bottom: 1rem;
+
+    .swiper-pagination-bullet {
+      background-color: v.$blanco;
+      filter: drop-shadow(0px 8px 24px rgba(236, 236, 236, 1));
+
+      &.swiper-pagination-bullet-active {
+        background: v.$primario;
+      }
+    }
+  }
+}
+
+.precios {
+  display: flex;
+  justify-content: space-between;
+
+  .price-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .precio-oferta {
+    position: relative;
+    z-index: 1;
+    color: v.$blanco;
+  }
+
+  .precio-oferta::before,
+  .precio-oferta::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: red;
+    z-index: 2;
+    transform-origin: center;
+  }
+
+  .precio-oferta::before {
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+
+  .precio-oferta::after {
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+}
+
+.etiqueta {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-right: 10rem solid transparent;
+  border-top: 10rem solid rgba(v.$primario, 0.7);
+  border-left: 10rem solid rgba(v.$primario, 0.7);
+  border-bottom: 10rem solid transparent;
+
+  h2 {
+    color: v.$blanco;
+    font-size: 2.8rem;
+    font-weight: v.$black;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    transform: rotate(316deg);
+    margin: 0 9rem 0 -7rem
+  }
+}

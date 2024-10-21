@@ -1,0 +1,88 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mx;
+
+.tabla_visual {
+    background-color: v.$oscuroSecundario;
+    border-radius: 2rem;
+    margin-top: 5rem;
+    overflow-x: scroll;
+    @include mx.desktop{
+        overflow-x: hidden;
+    }
+
+    h2 {
+        font-weight: v.$black;
+        letter-spacing: .2rem;
+        padding: 2rem 0;
+        color: v.$primario;
+    }
+
+    .tabla {
+        border-collapse: collapse;
+        color: v.$blanco;
+
+        thead {
+            th {
+                text-align: center;
+            }
+        }
+
+        tbody {
+            tr {
+                color: v.$gris_txt;
+
+                td {
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+
+                    button {
+                        text-transform: none;
+                        border: none;
+                        background-color: transparent;
+                        color: red;
+                        font-size: 2rem;
+                    }
+
+                    picture {
+                        display: flex;
+                        .img_tb {
+                            margin: 0 auto;
+                            width: 15rem;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .acciones {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    a {
+                        color: v.$blanco;
+
+                        i {
+                            color: v.$verde;
+                            font-size: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+div.dt-container .dt-length, div.dt-container .dt-search, div.dt-container .dt-info, div.dt-container .dt-processing, div.dt-container .dt-paging {
+    color: v.$gris!important;
+}
+.inputFalse {
+    background-color: v.$gris_alto;
+    color: v.$blanco;
+    border-radius: .7rem;
+    padding: .5rem 0 .5rem 1rem;
+}
+div.dt-container .dt-input{
+    background-color: v.$oscuroSecundario;
+}
+div.dt-container .dt-paging .dt-paging-button.disabled{
+    color: v.$gris!important;
+}

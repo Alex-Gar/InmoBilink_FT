@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as mx;
+
+.btn_whatsapp {
+    @include mx.btn(v.$whatsapp, v.$blanco, block, 1.5rem);
+}
+
+.btn_correo {
+    @include mx.btn(v.$correo, v.$blanco, block, 1.5rem);
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include mx.telefono {
+        width: auto;
+    }
+}
+
+.btn {
+    @include mx.btn(v.$primario, v.$negro, block, 1.5rem);
+    a{
+        color: v.$black
+    }
+    width: 100%;
+    @include mx.telefono {
+        width: auto;
+    }
+}
+
+.btn_negro {
+    @include mx.btn(rgba(0, 0, 0, 0.6), v.$blanco, block, 1.5rem);
+    border: v.$primario solid .2rem;
+
+    &:hover {
+        background-color: v.$negro;
+    }
+}
+
+.btn_right {
+    display: flex;
+    justify-content: end
+}

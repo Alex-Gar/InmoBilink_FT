@@ -1,0 +1,235 @@
+@use "base/variables" as v;
+@use "base/mixins" as mx;
+
+.card_testimoniales {
+  width: 100%;
+  margin-top: 3rem;
+
+  .slider-wrapper {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 5rem 1rem 4rem;
+
+    @include mx.tablet {
+      margin: 5rem 7rem 4rem;
+    }
+  }
+
+  .card-list .card-item {
+    height: auto;
+    color: v.$blanco;
+    user-select: none;
+    padding: 3rem 3rem 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(2rem);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .slider-wrapper .swiper-pagination-bullet {
+    background: v.$blanco;
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+  }
+
+  .slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .slider-wrapper .swiper-slide-button {
+    color: v.$blanco;
+    margin-top: 9rem;
+    transition: 0.2s ease;
+    &:hover {
+      color: v.$primario;
+    }
+  }
+  @media (max-width: 768px) {
+    .slider-wrapper .swiper-slide-button {
+      display: none;
+    }
+  }
+}
+
+.grifica_opiniones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 2rem;
+  @include mx.tablet {
+    flex-direction: row;
+  }
+
+  .rating_average {
+    width: 90%;
+    background-color: #1b1d24;
+    border-radius: 0.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    @include mx.tablet {
+      width: 40%;
+    }
+    h2 {
+      font-size: 3.5rem;
+      margin: 2rem 2rem 0 2rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+    .star-outer {
+      position: relative;
+      font-size: 3rem;
+      display: inline-block;
+    }
+    .star-outer::before {
+      content: "\2605 \2605 \2605 \2605 \2605";
+      color: #fff8;
+    }
+    .star-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      overflow: hidden;
+    }
+    .star-inner::before {
+      content: "\2605 \2605 \2605 \2605 \2605";
+      color: v.$primario;
+    }
+  }
+
+  .rating_progress {
+    width: 60%;
+  }
+  .rating_progress-value {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 1rem;
+
+    .star {
+      font-size: 1.2rem;
+      color: v.$primario;
+    }
+    p:last-child {
+      width: 10%;
+    }
+    .progress {
+      flex: 1 1 0;
+      height: 1rem;
+      border-radius: 5px;
+      background-color: v.$blanco;
+
+      .bar {
+        height: 100%;
+        background-color: v.$primario;
+      }
+    }
+  }
+}
+
+.container_testi {
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem 0;
+
+  form {
+    display: none;
+  }
+
+  h4 {
+    margin: 2rem 0;
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+}
+
+.star-widget {
+  .input_libreria {
+    display: none;
+  }
+}
+.fas {
+  font-size: 40px;
+  color: v.$gris_alto;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+.input_libreria:not(:checked) ~ label:hover,
+.input_libreria:not(:checked) ~ label:hover ~ label {
+  color: v.$primario;
+}
+.input_libreria:checked ~ form {
+  display: block;
+}
+.input_libreria:checked ~ label {
+  color: v.$primario;
+}
+.input_libreria#rate-5:checked ~ label {
+  color: v.$primario;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ header:before {
+  content: "Es muy mala";
+}
+#rate-2:checked ~ header:before {
+  content: "Es mala";
+}
+#rate-3:checked ~ header:before {
+  content: "Es buena";
+}
+#rate-4:checked ~ header:before {
+  content: "Me gusta";
+}
+#rate-5:checked ~ header:before {
+  content: "Me encanata";
+}
+
+header {
+  width: 100%;
+  color: v.$primario;
+  transition: all 0.2s ease;
+}
+.simu {
+  font-size: 3rem;
+  color: v.$gris;
+
+  .star {
+    color: v.$primario;
+  }
+}
+
+.cabecera_testimonio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  gap: 2rem;
+  
+  @include mx.desktop{
+    justify-content: flex-start;
+  }
+
+  .user-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 3px solid v.$blanco;
+    padding: 5px;
+  }
+
+  .user-profession {
+    font-size: 1.4rem;
+    color: v.$blanco;
+    text-align: center;
+  }
+}

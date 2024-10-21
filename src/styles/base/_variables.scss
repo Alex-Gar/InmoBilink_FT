@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+//Fuentes 
+$fuente_principal: 'lato', sans-serif;
+
+//Tamaño de media Queries
+$telefono: 480px;
+$tablet:768px;
+$desktop:1024px;
+
+//Colores
+$negro:#000;
+$gris:#707070;
+$gris_txt:#a7a7a7;
+$gris_medio:#535353;
+$gris_alto:#3B3B3B;
+$oscuroSecundario:#121218;
+$oscuro:#1d1d1d;
+$oscuroTransparencia: #111111bd;
+$blanco:#FFF;
+$blanco_dashboard: #f6f6f6;
+$primario: #DBCD11;
+$primario_hover:#bbb11a;
+$rojo: #cb0000;
+$verde:#329f00;
+
+$whatsapp:#25D366;
+$correo:#0da6f3;
+
+$sz: 5vmin;
+$on: #3cff00;
+$of: #fff0;
+$gr: #666666;
+$tr: all .1s ease 0s;
+$lg: var($of);
+
+//Fuentes
+$delgada: 300;
+$regular : 400;
+$bold: 700;
+$black: 900

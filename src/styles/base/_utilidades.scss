@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+
+#selected_nav{
+    border-bottom: .5rem solid v.$primario;
+    padding: 0 0 .4rem 0;
+}
+.alerta {
+    padding: .5rem;
+    text-align: center;
+    color: v.$blanco;
+    font-weight: v.$bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+    &.error {
+        background-color: v.$rojo;
+    }
+
+    &.exito {
+        background-color: v.$verde;
+    }
+}
+.instruciones{
+    P{
+        font-size: 1.5rem;
+        color: v.$gris_txt;
+        margin-bottom: 2.5rem;
+    }
+}
+.modal__notifi::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 12px; 
+}
+.modal__notifi::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: #272727; 
+    border-radius: 1rem; 
+}
+.modal__notifi::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: v.$primario; 
+    border-radius: 10px; 
+}
+.modal__notifi::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: #8f8f00; 
+}
